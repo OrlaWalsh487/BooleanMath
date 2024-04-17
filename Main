@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Variables to represent the state of each door (0 for closed, 1 for open)
+        int door1 = 0;
+        int door2 = 0;
+        int door3 = 0;
+        int door4 = 0;
+
+        // Prompt the user to input the state of each door
+        System.out.print("\nIf door A is open, press 1; if not, press 0: ");
+        door1 = input.nextInt();
+        System.out.print("If door B is open, press 1; if not, press 0: ");
+        door2 = input.nextInt();
+        System.out.print("If door C is open, press 1; if not, press 0: ");
+        door3 = input.nextInt();
+        System.out.print("If door D is open, press 1; if not, press 0: ");
+        door4 = input.nextInt();
+
+        // Check if any of the doors A and B or doors C and D are both open
+        if (door1 == 1 && door2 == 1 || door3 == 1 && door4 == 1) {
+            // If any pair of doors is open, display a warning message
+            System.out.println("\nWarning: you were not born in a barn...\nPlease close the door.");
+        } else {
+            // If all doors are closed, display a message indicating so
+            System.out.println("\nDoors are closed.");
+        }
+
+        input.close();
+    }
+}
